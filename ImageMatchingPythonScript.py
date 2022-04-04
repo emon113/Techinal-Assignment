@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-web_urls = ["https://gratisography.com/page/2/", "https://www.reshot.com/free-stock-photos/search/animal/", "https://picography.co/search/cat"]
-search_tags = ["retro","african","svg","cat"]
+web_urls = ["https://gratisography.com/page/2/", "https://www.reshot.com/free-stock-photos/search/animal/", "https://picography.co/search/cat"]   # List of website urls
+search_tags = ["retro","african","svg","cat"]               # List of search tag
 
 for web_page in web_urls:                                   # For loop for iterate over the website URLs
     html_file = requests.get(url=web_page).text             # Getting the HTML file of the webpage.
