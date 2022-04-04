@@ -7,9 +7,9 @@ search_tags = ["retro","african","svg","cat"]               # List of search tag
 for web_page in web_urls:                                   # For loop for iterate over the website URLs
     html_file = requests.get(url=web_page).text             # Getting the HTML file of the webpage.
     soup = BeautifulSoup(html_file,"html.parser")           # Creating an instance of BeautifulSoup with the HTML file and 'html.parser' is used as a parser.
-    images = soup.find_all('img', alt=True)                 # Finding all the img tag along with the 'alt'.   
+    img_tags = soup.find_all('img', alt=True)               # Finding all the img tag along with the 'alt'.   
 
-    for image in images:                                    # For loop to iterate over the img tag.
+    for img in img_tags:                                    # For loop to iterate over the img tag.
         for tag in search_tags:                             # for loop to iterate over the search tags.
-            if tag in image['src'] or tag in image['alt']:  # Cheecking if the image file or image alt matches with the tag or not.
-                print(image['src'])                         # If matches the image URL will be printed
+            if tag in img['src'] or tag in img['alt']:      # Cheecking if the image file or image alt matches with the tag or not.
+                print(img['src'])                           # If matches the image URL will be printed
