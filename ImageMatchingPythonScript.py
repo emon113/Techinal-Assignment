@@ -9,7 +9,7 @@ for web_page in web_urls:                                   # For loop for itera
     soup = BeautifulSoup(html_file,"html.parser")           # Creating an instance of BeautifulSoup with the HTML file and 'html.parser' is used as a parser.
     img_tags = soup.find_all('img', alt=True)               # Finding all the img tag along with the 'alt'.   
 
-    for img in img_tags:                                    # For loop to iterate over the img tag.
+    for img_tag in img_tags:                                    # For loop to iterate over the img tag.
         for tag in search_tags:                             # for loop to iterate over the search tags.
-            if tag in img['src'] or tag in img['alt']:      # Cheecking if the image file or image alt matches with the tag or not.
-                print(img['src'])                           # If matches the image URL will be printed
+            if tag in img_tag['src'] or tag in img_tag['alt']:      # Cheecking if the image file or image alt matches with the tag or not.
+                print(img_tag['src'])                           # If matches the image URL will be printed
